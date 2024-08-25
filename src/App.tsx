@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import CardsList from './components/CardsList';
+import { useFetchCardsQuery } from './store/Cards/cards.api';
+import { ICard } from './types';
+import { cardsActions } from './store/Cards/cards.slice';
+import { useAppSelector } from './hooks/useAppSelector';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const {data} = useFetchCardsQuery()
+  let cards = useAppSelector((store) => store.cards.cards)
+
+  useEffect(() => {
+    cardsActions.changeCards(data)
+  }, [data])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CardsList cardsList={data}/>
     </div>
   );
 }
