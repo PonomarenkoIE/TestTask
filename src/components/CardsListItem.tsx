@@ -33,13 +33,13 @@ export default function CardsListItem({card}: CardsListItemProps) {
       <div className='cards-list__item'>
         <img 
           className='icons icons-delete' 
-          src={deleteIcon}
+          src={`/TestTask/${deleteIcon}`}
           onClick={removeHandler}
           alt="del" 
         />
         <img 
           className='icons icons-like' 
-          src={isLiked ? likeActiveIcon : likeIcon}
+          src={isLiked ? `/TestTask/${likeActiveIcon}` : `/TestTask/${likeIcon}`}
           onClick={likeHandler}
           alt="like" 
         />
