@@ -2,6 +2,15 @@
   width: 80%;
   margin: 0 auto;
 }
+.cards-btn {
+  display: block;
+  background-color: white;
+  border: 0.5px solid black;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
 .cards-list {
   display: flex;
   justify-content: space-between;
@@ -10,6 +19,7 @@
 .cards-list__item {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 112px;
   border: 0.5px solid black;
   margin-bottom: 20px;
@@ -25,4 +35,17 @@
   text-align: center;
   margin: 10px;
   font-size: 14px;
+}
+
+.icons {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 2px;
+}
+.icons-delete {
+  left: 0;
+}
+.icons-like {
+  right: 2px;
 }

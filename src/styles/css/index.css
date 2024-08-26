@@ -10,6 +10,7 @@ a {
   color: black;
 }
 
-a, input {
+a, input, button {
   outline: 0;
+  border: 0;
 }

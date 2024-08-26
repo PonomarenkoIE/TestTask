@@ -13,9 +13,12 @@ export const cardsSlice = createSlice({
   name: 'cards',
   initialState,
   reducers: {
-    changeCards(state, action: PayloadAction<ICard[] | undefined>) {
+    setCards(state, action: PayloadAction<ICard[] | undefined>) {
       if (typeof action.payload !== 'undefined')
         state.cards = action.payload
+    },
+    removeCard(state, action: PayloadAction<ICard>) {
+      state.cards = state.cards.filter((card) => card.id !== action.payload.id)
     }
   }
 })
