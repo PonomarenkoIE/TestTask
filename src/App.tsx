@@ -2,13 +2,15 @@ import React, { useEffect } from 'react';
 import CardsList from './components/CardsList';
 import { useFetchCardsQuery } from './store/Cards/cards.api';
 import { cardsActions } from './store/Cards/cards.slice';
+import { useDispatch } from 'react-redux';
 
-function App() {
+export function App() {
   const {data} = useFetchCardsQuery()
+  const dispatch = useDispatch()
 
   //Хранение списка карточек в store
   useEffect(() => {
-    cardsActions.changeCards(data)
+    dispatch(cardsActions.changeCards(data))
   }, [data])
 
   return (

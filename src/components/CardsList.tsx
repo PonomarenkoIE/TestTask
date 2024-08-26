@@ -12,10 +12,10 @@ export default function CardsList({cardsList}: CardsListProps) {
     <>
       <h1 style={{textAlign: 'center', margin: 50}}>Cards List</h1>
       <div className='cards-list'>      
-        {cardsList?.map( card => 
+        {cardsList?.map( card =>
           <CardsListItem
-            key={card.id}
             card={card}
+            key={card.id}
           />
         )}
       </div>
