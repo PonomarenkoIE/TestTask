@@ -35,16 +35,16 @@ export default function CardsListItem({card}: CardsListItemProps) {
           className='icons icons-delete' 
           src={deleteIcon}
           onClick={removeHandler}
-          alt="" 
+          alt="del" 
         />
         <img 
           className='icons icons-like' 
           src={isLiked ? likeActiveIcon : likeIcon}
           onClick={likeHandler}
-          alt="" 
+          alt="like" 
         />
         <Link to={`/${card.id}`} >
-          <img className='cards-list__item__img' src={card.url} />
+          <img className='cards-list__item__img' src={card.url} alt='card'/>
           <div className='cards-list__item__id'>card {card.id}</div>
         </Link>
       </div>    

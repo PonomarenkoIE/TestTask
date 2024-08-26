@@ -6,7 +6,8 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from './hooks/useAppSelector';
 
 export function App() {
-  const state = useAppSelector(state => state)
+  const cards = useAppSelector(state => state.cards.cards)
+  const favCards = useAppSelector(state => state.favCards.favCards)
   const [isFav, setIsFav] = useState(false)
   const {data} = useFetchCardsQuery()
   const dispatch = useDispatch()
@@ -29,7 +30,7 @@ export function App() {
       >
         {isFav ? 'Show all cards' : 'Show favorite cards'}
       </button>
-      <CardsList cardsList={isFav ? state.favCards.favCards : state.cards.cards }/>
+      <CardsList cardsList={isFav ? favCards : cards }/>
     </div>
   );
 }
